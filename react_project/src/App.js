@@ -1,11 +1,12 @@
-
 import './App.css';
-
+import Simpsons from './containers/Simpsons';
+import RickMorty from "./containers/RickMorty";
 function App() {
   return (
-    <div className="App">
-
-    </div>
+      <>
+        <Simpsons />
+        <RickMorty />
+      </>
   );
 }
 
