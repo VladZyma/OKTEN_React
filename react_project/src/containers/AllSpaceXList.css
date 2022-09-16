@@ -1,0 +1,10 @@
+.spaceXList {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.spaceX-cart {
+    text-align: center;
+}

@@ -1,0 +1,16 @@
+.users-list {
+    display: flex;
+    justify-content: space-evenly;
+}
+.all-users {
+    padding: 15px;
+    background: forestgreen;
+    border-radius: 5px;
+    border: 2px solid forestgreen;
+}
+.user-details {
+    padding: 15px;
+    background: slateblue;
+    border-radius: 5px;
+    border: 2px solid slateblue;
+}
