@@ -1,0 +1,12 @@
+.Post{
+    background: mediumseagreen;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.Post > h4 {
+    text-align: center;
+}
+.Post > div {
+    display: flex;
+    justify-content: center;
+}

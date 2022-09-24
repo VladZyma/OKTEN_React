@@ -1,0 +1,13 @@
+.Header {
+    margin: 0 auto 10px;
+    padding: 10px;
+    width: 50%;
+    background: #fde1e1;
+}
+.navList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
