@@ -5,3 +5,4 @@ export * from './posts/Posts';
 export * from './post/Post';
 export * from './cars/Cars';
 export * from './car/Car';
+export * from './carForm/carForm';

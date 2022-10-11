@@ -1,11 +1,20 @@
 
 const Car = (props) => {
-    const {car} = props;
+    const {car, car: {id, model, price, year}} = props;
+    const {deleteCarHandler, updateCarHandler} = props;
 
 
     return (
         <div>
-            <div>Car</div>
+            <div>
+                <p>ID : {id}</p>
+                <p>MODEL : {model}</p>
+                <p>PRICE : {price}</p>
+                <p>YEAR : {year}</p>
+                <button onClick={() => updateCarHandler(id,car)}>update</button>
+                <button onClick={() =>deleteCarHandler(id)}>delete</button>
+            </div>
+            <hr/>
         </div>
     );
 }
