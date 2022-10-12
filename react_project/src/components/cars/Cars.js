@@ -16,7 +16,6 @@ const Cars = () => {
         dispatch(carActions.deleteCar({id}));
     }
     function updateCarHandler(car) {
-        console.log(car);
         dispatch(carActions.addCarForUpdate(car));
     }
 

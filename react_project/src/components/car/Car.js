@@ -11,7 +11,7 @@ const Car = (props) => {
                 <p>MODEL : {model}</p>
                 <p>PRICE : {price}</p>
                 <p>YEAR : {year}</p>
-                <button onClick={() => updateCarHandler(id,car)}>update</button>
+                <button onClick={() => updateCarHandler(car)}>update</button>
                 <button onClick={() =>deleteCarHandler(id)}>delete</button>
             </div>
             <hr/>

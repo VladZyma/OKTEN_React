@@ -47,8 +47,10 @@ const sendCarForUpdate = createAsyncThunk(
     'carsSlice/sendCarForUpdate',
     async ({id, car}, {rejectWithValue}) => {
         try {
+            console.log(id);
             const {data} = await carsService.updateById(id, car);
             return data;
+            console.log(data);
         }
         catch (e) {
             rejectWithValue(e.response.data);
@@ -67,6 +69,7 @@ const carsSlice = createSlice({
     },
     extraReducers: builder =>
         builder
+            //========= getAll ==================
             .addCase(getAll.fulfilled, (state, action) => {
                 state.cars = action.payload;
                 state.loading = false;
@@ -78,16 +81,46 @@ const carsSlice = createSlice({
                 state.error = action.payload;
                 state.loading = false;
             })
+
+            //========= addCar ====================
             .addCase(addCar.fulfilled, (state, action) => {
                 state.cars.push(action.payload);
+                state.loading = false;
             })
+            .addCase(addCar.pending, (state, action) => {
+                state.loading = true;
+            })
+            .addCase(addCar.rejected, (state, action) => {
+                state.error = action.payload;
+                state.loading = false;
+            })
+
+            //========= deleteCar ====================
             .addCase(deleteCar.fulfilled, (state, action) => {
                 let carIndex = state.cars.findIndex(car => car.id === action.payload);
                 state.cars.splice(carIndex, 1);
+                state.loading = false;
             })
+            .addCase(deleteCar.pending, (state, action) => {
+                state.loading = true;
+            })
+            .addCase(deleteCar.rejected, (state, action) => {
+                state.error = action.payload;
+                state.loading = false;
+            })
+
+            //========= sendCarForUpdate ====================
             .addCase(sendCarForUpdate.fulfilled, (state, action) => {
                 const foundCar = state.cars.find(car => car.id === action.payload.id);
                 Object.assign(foundCar, action.payload);
+                state.loading = false;
+            })
+            .addCase(sendCarForUpdate.pending, (state, action) => {
+                state.loading = true;
+            })
+            .addCase(sendCarForUpdate.rejected, (state, action) => {
+                state.error = action.payload;
+                state.loading = false;
             })
 });
 
